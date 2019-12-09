@@ -60,6 +60,10 @@ while(cur_vec[position] != 99) {
 }
 output #first star
 
+#'
+#' Let's just be clear on this. I was gonna skip these opcode days. But there are just so many
+#' of them. This series of problems is going to be my downfall. That I can promise you.
+#'
 
 
 update_vec <- function(long_vec, position, my_input = 1, debug = FALSE) {

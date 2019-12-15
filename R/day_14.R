@@ -1,5 +1,4 @@
 oo <- readLines("data/day_14")
-oo
 num_elements <- str_extract_all(oo, "[A-Z]+") %>% 
   unlist() %>% 
   unique() %>% 
@@ -13,16 +12,6 @@ rownames(df) <- str_extract_all(oo, "[A-Z]+") %>%
   unlist() %>% 
   unique()
 
-
-
-
-
-
-
-
-
-df
-i <- "A"
 for(i in rownames(df)) {
   j <- which(word(oo, -1) == i)
   row_to_change <- str_extract_all(oo[j], "[A-Z]+") %>% unlist()
@@ -30,7 +19,6 @@ for(i in rownames(df)) {
   df[i, row_to_change] <- vals
 }
 df["FUEL", "needed"] <- 1
-df
 
 how_many <- function(av, ne, source, outp) {
   diff_ne <- ne - av
@@ -44,7 +32,6 @@ N <- nrow(df)
 
 df["ORE", "available"] <- Inf
 old_df <- df
-df
 while(any(df[,"needed"] > df[,"available"])) {
   mar <- min(which(df[,"needed"] > df[,"available"]))
   hm <- how_many(df[mar,"available"], 

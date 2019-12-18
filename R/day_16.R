@@ -26,7 +26,7 @@ for(i in 1:100) {
   sig_new <- sapply(1:N, function(i) tens_digit(sum(round(conv(sig_new, phase_generator(i, N))))))
   print(i)
 }
-sig_new[1:8] #first star
+paste(sig_new[1:8], collapse = "") #first star
 
 sig <- rep(sig, 10000)
 start <- as.integer(paste(sig[1:7], collapse = ""))
@@ -36,4 +36,4 @@ sig2 <- rev(sig2)
 for(i in 1:100) {
   sig2 <- cumsum(sig2) %% 10
 }
-rev(sig2)[2:9] #second star!
+paste(rev(sig2)[2:9], collapse = "") #second star!
